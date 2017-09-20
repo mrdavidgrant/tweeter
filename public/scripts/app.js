@@ -51,7 +51,6 @@ var data = [
 ];
 
 function createTweetElement(tweet) {
-  console.log(tweet.user)
   var date = new Date(tweet.created_at)
   var tweetEl = `<article class='single tweet'>
   <header>
@@ -79,6 +78,33 @@ function renderTweets(tweets) {
   }
 }
 
-$(function() {
-  renderTweets(data)
+function loadTweets(){
+  $.ajax({
+    url: '/tweets/',
+    method: 'GET',
+    success: function ($tweets) {
+      $('#tweets').empty()
+      renderTweets($tweets)
+    }
+  })
+}
+
+$(
+  function() {
+    loadTweets()
+
+    // post new tweet
+    $('#new-tweet').find('input').on('click', function(evt){
+      evt.preventDefault()
+      var content = $('#new-tweet').find('form').serialize()
+      $.ajax({
+        url: '/tweets/',
+        method: 'POST',
+        data: content,
+        success: function () {
+          $('textarea').val('')
+          loadTweets()
+        }
+      })
+    })
 })
