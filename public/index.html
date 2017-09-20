@@ -10,6 +10,7 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     
     <!-- Roboto Condensed font -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i" rel="stylesheet">
@@ -31,7 +32,14 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent elementum sem nec mi vehicula interdum. Vestibulum ut tortor tortor. Nam interdum aliquam luctus. Nulla a quam congue velit condimentum iaculis. Nunc quam mauris, eleifend at molestie at, feugiat a elit. Sed vulputate quam ut nulla sagittis efficitur. Integer id leo ac est porta condimentum nec ut odio. Curabitur viverra accumsan tellus sollicitudin tempus. Sed ut est sed enim dapibus tincidunt a et quam. Mauris elementum felis dui, ac accumsan lacus mollis at. Quisque ultricies vitae eros vel lacinia. Sed in pharetra nunc. Maecenas volutpat lorem dui, vitae iaculis enim pellentesque sed. Pellentesque porttitor nibh magna, id efficitur magna viverra eu. Quisque nunc purus, posuere et eros sit amet, sodales dapibus orci
+      <section id="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form action="/tweets/" method="POST">
+          <textarea name="text" placeholder="What are you humming about?"></textarea>
+          <input type="submit" value="Tweet">
+          <span id="counter">140</span>
+        </form>
+      </section>
     </main>
 
   </body>

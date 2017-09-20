@@ -26,7 +26,8 @@ body {
  */
 
  main {
-   margin: 140px auto 0;
+   margin: 0 auto;
+   padding: 80px 2em 0 2em;
    width: 450px;
    background-color: white;
  }
