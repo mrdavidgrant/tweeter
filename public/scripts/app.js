@@ -89,6 +89,24 @@ function loadTweets(){
   })
 }
 
+function verifyNew() {
+  console.log(+$('#counter').text())
+  if (+$('#counter').text() < 0) {
+    let warning = '<div class="verify error">140 characters max</div>'
+    $('.verify').empty()
+    $('#new-tweet').find('input').after(warning)
+    return false
+  } else if (+$('#counter').text() == 140){
+    let warning = '<div class="verify error">Please input text to tweet</div>'
+    $('.verify').empty()
+    $('#new-tweet').find('input').after(warning)
+    return false
+  } else {
+    $('.verify').empty()
+    return true
+  }
+}
+
 $(
   function() {
     loadTweets()
@@ -96,15 +114,17 @@ $(
     // post new tweet
     $('#new-tweet').find('input').on('click', function(evt){
       evt.preventDefault()
-      var content = $('#new-tweet').find('form').serialize()
-      $.ajax({
-        url: '/tweets/',
-        method: 'POST',
-        data: content,
-        success: function () {
-          $('textarea').val('')
-          loadTweets()
-        }
-      })
+      if (verifyNew()){
+        var content = $('#new-tweet').find('form').serialize()
+        $.ajax({
+          url: '/tweets/',
+          method: 'POST',
+          data: content,
+          success: function () {
+            $('textarea').val('')
+            loadTweets()
+          }
+        })
+      }
     })
 })

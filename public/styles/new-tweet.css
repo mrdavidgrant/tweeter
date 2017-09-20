@@ -18,6 +18,7 @@ section input {
   border-style: solid;
   height: 35px;
   width: 60px;
+  display: inline;
 }
 
 span#counter {
@@ -34,4 +35,8 @@ span#counter {
 .error {
   color: red;
   font-weight: bold;
+}
+
+.verify {
+  display: inline;
 }
