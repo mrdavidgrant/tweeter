@@ -40,3 +40,7 @@ span#counter {
 .verify {
   display: inline;
 }
+
+.hidden {
+  display: none;
+}

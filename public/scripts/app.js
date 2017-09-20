@@ -74,7 +74,7 @@ function renderTweets(tweets) {
   })
   for (tweet in tweets) {
     var $tweet = createTweetElement(tweets[tweet])
-    $('#tweets').append($tweet)
+    $('#tweets').append($tweet).slideDown('slow')
   }
 }
 
@@ -110,6 +110,13 @@ function verifyNew() {
 $(
   function() {
     loadTweets()
+
+    // show new-tweet form
+    $('#compose').on('click', function() {
+      $('#new-tweet').toggle('slow', function(){
+        $('#new-tweet').find('textarea').focus()
+      })
+    })
 
     // post new tweet
     $('#new-tweet').find('input').on('click', function(evt){

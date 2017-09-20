@@ -18,3 +18,29 @@
   line-height: 80px;
   font-size: 200%
 }
+
+#compose {
+  margin: 5px;
+  height: 70px;
+  width: 124px;
+  border: 1px solid black;
+  border-radius: 5px;
+  float: right;
+  background-color: #E7FDFF;
+  color: #00a087;
+  font-size: large;
+}
+
+#compose img {
+  margin: 20px 8px;
+}
+
+#compose p {
+  margin: 24px 8px;
+  float: right;
+}
+
+#compose:hover {
+  background-color: white;
+  color: black;
+}
