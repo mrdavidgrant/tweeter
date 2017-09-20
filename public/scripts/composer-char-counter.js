@@ -1,7 +1,7 @@
 $(function (){
   $('textarea').on('keyup', function(){
-    var chars = 140 - +$(this).val().length
-    var counter = $('#counter')
+    let chars = 140 - +$(this).val().length
+    let counter = $('#counter')
     counter.text(chars)
     if (chars < 0) {
       counter.removeClass('warning')

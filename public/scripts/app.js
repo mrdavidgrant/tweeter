@@ -1,13 +1,8 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
 
 function createTweetElement(tweet) {
-  var date = new Date(tweet.created_at)
-  var safeText = $("<div>").text(tweet.content.text)
-  var tweetEl = `<article class='single tweet'>
+  let date = new Date(tweet.created_at)
+  let safeText = $("<div>").text(tweet.content.text)
+  let tweetEl = `<article class='single tweet'>
   <header>
     <img src='${tweet.user.avatars.regular}' class='avatar'><h2 class='username'>${tweet.user.name}</h2><span class='handle'>${tweet.user.handle}</span>
   </header>
@@ -28,7 +23,7 @@ function renderTweets(tweets) {
     return b.created_at - a.created_at
   })
   for (tweet in tweets) {
-    var $tweet = createTweetElement(tweets[tweet])
+    let $tweet = createTweetElement(tweets[tweet])
     $('#tweets').append($tweet).slideDown('slow')
   }
 }
@@ -66,18 +61,16 @@ $(
   function() {
     loadTweets()
 
-    // show new-tweet form
     $('#compose').on('click', function() {
       $('#new-tweet').toggle('slow', function(){
         $('#new-tweet').find('textarea').focus()
       })
     })
 
-    // post new tweet
     $('#new-tweet').find('input').on('click', function(evt){
       evt.preventDefault()
       if (verifyNew()){
-        var content = $('#new-tweet').find('form').serialize()
+        let content = $('#new-tweet').find('form').serialize()
         $.ajax({
           url: '/tweets/',
           method: 'POST',
