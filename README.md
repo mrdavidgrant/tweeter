@@ -19,3 +19,8 @@ Currently running from a local MongoDB.  Please ensure MongoDB is up and running
 
 - Express
 - Node 5.10.x or above
+******************************************
+## Screenshots
+![Screenshot of whole screen with compose box](tweeter/screenshots/tweeter.png)
+![Screenshot of compose box with too many letters](tweeter/screenshots/compose-box.png)
+![Screenshot of logo and navbar](tweeter/screenshots/logonav.png)
