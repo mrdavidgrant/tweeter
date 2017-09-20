@@ -1,0 +1,46 @@
+.tweet header {
+  height: 92px;
+
+}
+.tweet .avatar {
+  height: 65px;
+  width: 65px;
+  margin: 12px;
+  border-radius: 5px;
+  float: left;
+}
+
+.tweet .username {
+  margin: 12px 0;
+  line-height: 65px;
+  display: inline-block;
+}
+
+.tweet .handle {
+  float: right;
+  line-height: 65px;
+  margin: 12px;
+}
+
+.tweet .content {
+  background-color: white;
+  border-bottom: 1px solid lightgrey;
+  padding: 12px;
+}
+.tweet footer {
+  padding: 12px;
+  background-color: white;
+  font-size: small;
+}
+
+.tweet footer img {
+  visibility: hidden;
+  height: 15px;
+  width: 20px;
+  float: right;
+  margin: 0 4px;
+}
+
+.tweet:hover footer img {
+  visibility: visible;
+}

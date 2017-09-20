@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
     
     <!-- Roboto Condensed font -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i" rel="stylesheet">
@@ -33,7 +34,7 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section id="new-tweet">
+      <section class='single' id="new-tweet">
         <h2>Compose Tweet</h2>
         <form action="/tweets/" method="POST">
           <textarea name="text" placeholder="What are you humming about?"></textarea>
@@ -41,6 +42,21 @@
           <span id="counter">140</span>
         </form>
       </section>
+      <div id='tweets'>
+        <article class='single tweet'>
+          <header>
+            <img src='/images/superman.png' class='avatar'><h2 class='username'>Superman</h2><span class='handle'>@superman</span>
+          </header>
+          <div class='content'>This is my tweet</div>
+          <footer>Posted a while ago
+            <span>
+              <a href='#'><img src='/images/flag.png'></a>
+              <a href='#'><img src='/images/retweet.png'></a>
+              <a href='#'><img src='/images/heart.png'></a>
+            </span>
+          </footer>
+        </article>
+      </div>
     </main>
 
   </body>
