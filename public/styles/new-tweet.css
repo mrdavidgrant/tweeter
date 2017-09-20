@@ -7,7 +7,7 @@ section#new-tweet {
 
 section h2 {
   line-height: 20px;
-  padding: 12px;
+  padding: 0 12px;
   border-bottom: 1px solid lightgrey;
 }
 
@@ -31,4 +31,14 @@ span#counter {
   float: right;
   margin: 8px 15px;
   font-style: italic;
+}
+
+.warning {
+  color: #FA8704;
+  font-weight: bold;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
 }
