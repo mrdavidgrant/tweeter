@@ -6,11 +6,12 @@
 
 function createTweetElement(tweet) {
   var date = new Date(tweet.created_at)
+  var safeText = $("<div>").text(tweet.content.text)
   var tweetEl = `<article class='single tweet'>
   <header>
     <img src='${tweet.user.avatars.regular}' class='avatar'><h2 class='username'>${tweet.user.name}</h2><span class='handle'>${tweet.user.handle}</span>
   </header>
-  <div class='content'>${tweet.content.text}</div>
+  <div class='content'>${safeText}</div>
   <footer>${date}
     <span>
       <a href='#'><img src='/images/flag.png'></a>
