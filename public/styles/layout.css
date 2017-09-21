@@ -39,3 +39,50 @@ body {
   background-color: #eee;
   border-radius: 5px;
 }
+
+#menu {
+  position: fixed;
+  top: 112px;
+  right: 2em;
+  background-color: #E7FDFF;
+  color: #00a087;
+  width: 140px;
+  height: 195px;
+  padding: 10px;
+  border: 1px solid #00a087;
+  border-radius: 5px;
+  display: none;
+}
+
+#menu h2 {
+  margin: 0 10px;
+}
+
+#menu .logout {
+  float: right;
+  font-size: small;
+  margin: 7px 0;
+}
+
+#menu .handle {
+  font-size: large;
+  margin: 0 15px;
+}
+
+#menu img {
+  margin: 0px 9px;
+}
+
+#menu .loggedIn{
+  position: fixed;
+  top: 80px;
+  right: 0px;
+  background-color: #E7FDFF;
+  color: #00a087;
+  width: 140px;
+  height: 195px;
+  padding: 10px;
+  border: 1px solid #00a087;
+  border-radius: 5px;
+  display: none;
+}

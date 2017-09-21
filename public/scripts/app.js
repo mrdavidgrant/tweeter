@@ -61,6 +61,10 @@ $(
   function() {
     loadTweets()
 
+    $('#menu-button').on('click', function(){
+      $('#menu').toggle('slow')
+    })
+
     $('#compose').on('click', function() {
       $('#new-tweet').toggle('slow', function(){
         $('#new-tweet').find('textarea').focus()

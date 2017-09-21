@@ -20,7 +20,16 @@ module.exports = function makeDataHelpers(db) {
       db.collection('tweets').find().toArray((err, tweets) => {
         callback(null, tweets)
       })
-    }
+    },
+
+    saveUser: function(newUser, callback) {
+      db.collection('users').insertOne(newUser, (err, result) => {
+        if (err) {
+          return callback(err)
+        }
+        callback(null, true)
+      })
+  },
 
   }
 }

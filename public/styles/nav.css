@@ -7,9 +7,12 @@
   background-color: #00a087;
   color: #e8fdff;
   padding: 0px 2em;
+  z-index: 9999999;
 }
 
 #nav-bar .logo {
+  width: 80px;
+  height: 80px;
   float: left
 }
 
@@ -23,9 +26,12 @@
   margin: 5px;
   height: 70px;
   width: 124px;
+  float: right;
+}
+
+#nav-bar .button {
   border: 1px solid black;
   border-radius: 5px;
-  float: right;
   background-color: #E7FDFF;
   color: #00a087;
   font-size: large;
@@ -40,7 +46,21 @@
   float: right;
 }
 
-#compose:hover {
+#nav-bar .button:hover {
   background-color: white;
   color: black;
+}
+
+#menu-button {
+  float: right;
+  margin: 5px 0;
+  height: 70px;
+  width: 70px;
+}
+
+div.hamburger {
+  width: 50px;
+  height: 8px;
+  background-color: #00a087;
+  margin: 11px 9px;
 }
