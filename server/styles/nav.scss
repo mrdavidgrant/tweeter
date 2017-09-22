@@ -1,23 +1,28 @@
+@import './variables.scss';
+
 #nav-bar {
   position: fixed;
   top: 0;
   left: 0;
   height: 80px;
   width: 100%;
-  background-color: #00a087;
+  background-color: $primary-color;
   color: #e8fdff;
   padding: 0px 2em;
+  
+  .logo {
+    float: left
+  }
+
+  .header {
+    float: left;
+    line-height: 80px;
+    font-size: 200%
+  }
+
 }
 
-#nav-bar .logo {
-  float: left
-}
 
-#nav-bar .header {
-  float: left;
-  line-height: 80px;
-  font-size: 200%
-}
 
 #compose {
   margin: 5px;
@@ -27,17 +32,17 @@
   border-radius: 5px;
   float: right;
   background-color: #E7FDFF;
-  color: #00a087;
+  color: $primary-color;
   font-size: large;
-}
 
-#compose img {
-  margin: 20px 8px;
-}
+  img {
+    margin: 20px 8px;
+  }
 
-#compose p {
-  margin: 24px 8px;
-  float: right;
+  p {
+    margin: 24px 8px;
+    float: right;
+  }
 }
 
 #compose:hover {
