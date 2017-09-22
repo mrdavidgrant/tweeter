@@ -9,13 +9,20 @@
   background-color: $primary-color;
   color: #e8fdff;
   padding: 0px 2em;
+  display: flex;
+  align-content: space-between;
+
+  #logoword {
+    display: flex;
+    flex: 7;
+  }
   
   .logo {
-    float: left
+    // float: left
   }
 
   .header {
-    float: left;
+    // float: left;
     line-height: 80px;
     font-size: 200%
   }
@@ -30,7 +37,8 @@
   width: 124px;
   border: 1px solid black;
   border-radius: 5px;
-  float: right;
+  display: flex;
+  flex: 1;
   background-color: #E7FDFF;
   color: $primary-color;
   font-size: large;

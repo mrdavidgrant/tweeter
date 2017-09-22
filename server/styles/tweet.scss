@@ -1,59 +1,84 @@
-.tweet header {
-  height: 92px;
+.tweet {
+  header {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+    
+    .avatar {
+      margin: 12px;
+      border-radius: 5px;
+      display: flex;
+      flex: 1;
+    }
+  
+    .username {
+      margin: 12px 0;
+      align-self: center;
+      display: flex;
+      flex: 4;
+    }
+  
+    .handle {
+      display: flex;
+      flex: 1;
+      align-self: center;
+      margin: 12px;
+    }
+  }
 
-}
-.tweet .avatar {
-  height: 65px;
-  width: 65px;
-  margin: 12px;
-  border-radius: 5px;
-  float: left;
+  .content {
+    background-color: white;
+    border-bottom: 1px solid lightgrey;
+    padding: 12px;
+  }
+  
+  footer {
+    background-color: white;
+    font-size: small;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+    justify-content: space-between;
+  
+    p {
+      display: inline-flex;
+      flex: 10;
+      margin-left: 12px; 
+    }
+    span {
+      display: flex;
+      flex-flow: row wrap;
+      flex: 3;
+      align-content: center;
+      justify-content: space-between;
+      
+      button {
+        display: inline-flex;
+        border: none;
+        margin-right: 12px;
+        background-color: #FFF
+      }
+
+      img {
+        height: 20px;
+        width: 20px;
+        visibility: hidden;
+        display: inline-flex;
+        align-self: center;
+        
+      }
+    }
+  }
 }
 
-.tweet .username {
-  margin: 12px 0;
-  line-height: 65px;
-  display: inline-block;
+img.like.liked {
+  visibility: visible;
 }
 
-.tweet .handle {
-  float: right;
-  line-height: 65px;
-  margin: 12px;
-}
 
-.tweet .content {
-  background-color: white;
-  border-bottom: 1px solid lightgrey;
-  padding: 12px;
-}
-.tweet footer {
-  padding: 12px;
-  background-color: white;
-  font-size: small;
-}
 
-.tweet footer img {
-  height: 15px;
-  width: 20px;
-  visibility: hidden;
-  float: right;
-  margin: 0 4px;
-}
 
 .tweet:hover footer img {
   visibility: visible;
 }
 
-.tweet img.liked {
-  visibility: visible;
-}
-
-.tweet button {
-  height: 15px;
-  width: 20px;
-  visibility: hidden;
-  float: right;
-  margin: 0 4px;
-  border: none;
-}

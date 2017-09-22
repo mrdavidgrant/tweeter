@@ -8,7 +8,9 @@ body {
   margin: 0;
   color: #244751;
   background-color: #eee;
-  font-family: 'Roboto Condensed', sans-serif; }
+  font-family: 'Roboto Condensed', sans-serif;
+  display: flex;
+  justify-content: center; }
   body main {
     margin: 0 auto;
     padding: 80px 2em 0 2em;
@@ -30,11 +32,13 @@ body {
   width: 100%;
   background-color: #00a087;
   color: #e8fdff;
-  padding: 0px 2em; }
-  #nav-bar .logo {
-    float: left; }
+  padding: 0px 2em;
+  display: flex;
+  align-content: space-between; }
+  #nav-bar #logoword {
+    display: flex;
+    flex: 7; }
   #nav-bar .header {
-    float: left;
     line-height: 80px;
     font-size: 200%; }
 
@@ -44,7 +48,8 @@ body {
   width: 124px;
   border: 1px solid black;
   border-radius: 5px;
-  float: right;
+  display: flex;
+  flex: 1;
   background-color: #E7FDFF;
   color: #00a087;
   font-size: large; }
@@ -98,24 +103,24 @@ span#counter {
   display: none; }
 
 .tweet header {
-  height: 92px; }
-
-.tweet .avatar {
-  height: 65px;
-  width: 65px;
-  margin: 12px;
-  border-radius: 5px;
-  float: left; }
-
-.tweet .username {
-  margin: 12px 0;
-  line-height: 65px;
-  display: inline-block; }
-
-.tweet .handle {
-  float: right;
-  line-height: 65px;
-  margin: 12px; }
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center; }
+  .tweet header .avatar {
+    margin: 12px;
+    border-radius: 5px;
+    display: flex;
+    flex: 1; }
+  .tweet header .username {
+    margin: 12px 0;
+    align-self: center;
+    display: flex;
+    flex: 4; }
+  .tweet header .handle {
+    display: flex;
+    flex: 1;
+    align-self: center;
+    margin: 12px; }
 
 .tweet .content {
   background-color: white;
@@ -123,27 +128,36 @@ span#counter {
   padding: 12px; }
 
 .tweet footer {
-  padding: 12px;
   background-color: white;
-  font-size: small; }
+  font-size: small;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  justify-content: space-between; }
+  .tweet footer p {
+    display: inline-flex;
+    flex: 10;
+    margin-left: 12px; }
+  .tweet footer span {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 3;
+    align-content: center;
+    justify-content: space-between; }
+    .tweet footer span button {
+      display: inline-flex;
+      border: none;
+      margin-right: 12px;
+      background-color: #FFF; }
+    .tweet footer span img {
+      height: 20px;
+      width: 20px;
+      visibility: hidden;
+      display: inline-flex;
+      align-self: center; }
 
-.tweet footer img {
-  height: 15px;
-  width: 20px;
-  visibility: hidden;
-  float: right;
-  margin: 0 4px; }
+img.like.liked {
+  visibility: visible; }
 
 .tweet:hover footer img {
   visibility: visible; }
-
-.tweet img.liked {
-  visibility: visible; }
-
-.tweet button {
-  height: 15px;
-  width: 20px;
-  visibility: hidden;
-  float: right;
-  margin: 0 4px;
-  border: none; }

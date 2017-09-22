@@ -7,8 +7,8 @@ function createTweetElement(tweet) {
     <img src='${tweet.user.avatars.regular}' class='avatar'><h2 class='username'>${tweet.user.name}</h2><span class='handle'>${tweet.user.handle}</span>
   </header>
   <div class='content'>${tweet.content.text}</div>
-  <footer>${date}
-    <span>
+  <footer><p>${date}</p>
+    <span class='actions'>
       <img src='/images/flag.png' class="flag">
       <img src='/images/retweet.png' class="retweet">`
       if (tweet.liked == 'true') {
@@ -109,14 +109,4 @@ $(
         })
 
     })
-      // let data = {
-        //   id: $(this).closest('article').data("id"),
-      //   liked: $(this).closest('article').data('liked')
-      // }
-      // if (data.liked === 0) {
-        //   data.liked++
-      // } else {
-        //   data.liked--
-      // }
-      // })
 })
