@@ -8,9 +8,10 @@ const MongoClient   = require("mongodb").MongoClient
 const MONGODB_URI   = process.env.MONGODB_URI
 const path          = require('path')
 const sassMiddleware = require('node-sass-middleware')
-var winston = require('winston')
+const methodOverride = require('method-override')
 
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(methodOverride('X-HTTP-Method-Override'))
 app.use(sassMiddleware({
   /* Options */
   src: path.join(__dirname, '/styles')
