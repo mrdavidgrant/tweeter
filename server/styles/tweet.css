@@ -1,7 +1,7 @@
 .tweet header {
   height: 92px;
-
 }
+
 .tweet .avatar {
   height: 65px;
   width: 65px;
@@ -27,6 +27,7 @@
   border-bottom: 1px solid lightgrey;
   padding: 12px;
 }
+
 .tweet footer {
   padding: 12px;
   background-color: white;
@@ -51,3 +52,6 @@
 .tweet a.liked {
   visibility: visible;
 }
+ 
+
+ /*# sourceMappingURL= tweet.css.map */

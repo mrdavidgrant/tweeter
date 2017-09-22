@@ -2,16 +2,21 @@
 function createTweetElement(tweet) {
   let date = new Date(tweet.created_at)
   // let safeText = $("<div>").text(tweet.content.text)
-  let tweetEl = `<article class='single tweet'>
+  let tweetEl = `<article class='single tweet' data-id=${tweet._id} data-liked=${tweet.liked}>
   <header>
     <img src='${tweet.user.avatars.regular}' class='avatar'><h2 class='username'>${tweet.user.name}</h2><span class='handle'>${tweet.user.handle}</span>
   </header>
   <div class='content'>${tweet.content.text}</div>
   <footer>${date}
     <span>
-      <a href='#'><img src='/images/flag.png'></a>
-      <a href='#'><img src='/images/retweet.png'></a>
-      <a href='#'><img src='/images/heart.png'></a>
+      <a href='#' class="flag"><img src='/images/flag.png'></a>
+      <a href='#' class="retweet"><img src='/images/retweet.png'></a>`
+      if (tweet.liked === 1) {
+        tweetEl += `<a href='#' class="like liked"><img src='/images/heart.png'></a>`
+      } else {
+        tweetEl += `<a href='#' class="like"><img src='/images/heart.png'></a>`
+      }
+      tweetEl += `
     </span>
   </footer>
 </article>`
