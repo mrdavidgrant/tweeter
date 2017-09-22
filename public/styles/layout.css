@@ -127,17 +127,23 @@ span#counter {
   background-color: white;
   font-size: small; }
 
-.tweet footer a {
+.tweet footer img {
+  height: 15px;
+  width: 20px;
   visibility: hidden;
   float: right;
   margin: 0 4px; }
 
-.tweet footer img {
+.tweet:hover footer img {
+  visibility: visible; }
+
+.tweet img.liked {
+  visibility: visible; }
+
+.tweet button {
   height: 15px;
-  width: 20px; }
-
-.tweet:hover footer a {
-  visibility: visible; }
-
-.tweet a.liked {
-  visibility: visible; }
+  width: 20px;
+  visibility: hidden;
+  float: right;
+  margin: 0 4px;
+  border: none; }

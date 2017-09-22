@@ -1,5 +1,7 @@
 "use strict"
 
+const ObjectId      = require("mongodb").ObjectId
+
 module.exports = function makeDataHelpers(db) {
   return {
 
@@ -20,6 +22,18 @@ module.exports = function makeDataHelpers(db) {
       db.collection('tweets').find().toArray((err, tweets) => {
         callback(null, tweets)
       })
+    },
+
+    likeTweets: function(data, callback) {
+      // var doc = db.collection('tweets').find( { "_id" : data.id} )
+      console.log('Sending to DB: ', data)
+      db.collection('tweets').update( { "_id" : ObjectId(data.id) }, { $set: { liked: data.liked } }, (err, result) => {
+        if (err) {
+          return callback(err)
+        }
+
+        callback(null, true)
+      } )
     }
 
   }

@@ -5,13 +5,16 @@ const express       = require("express")
 const bodyParser    = require("body-parser")
 const app           = express()
 const MongoClient   = require("mongodb").MongoClient
+const ObjectId      = require("mongodb").ObjectId
 const MONGODB_URI   = process.env.MONGODB_URI
 const path          = require('path')
 const sassMiddleware = require('node-sass-middleware')
 const methodOverride = require('method-override')
+const morgan        = require('morgan')
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(methodOverride('X-HTTP-Method-Override'))
+app.use(morgan('dev'))
 app.use(sassMiddleware({
   /* Options */
   src: path.join(__dirname, '/styles')

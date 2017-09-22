@@ -9,12 +9,12 @@ function createTweetElement(tweet) {
   <div class='content'>${tweet.content.text}</div>
   <footer>${date}
     <span>
-      <a href='#' class="flag"><img src='/images/flag.png'></a>
-      <a href='#' class="retweet"><img src='/images/retweet.png'></a>`
-      if (tweet.liked === 1) {
-        tweetEl += `<a href='#' class="like liked"><img src='/images/heart.png'></a>`
+      <img src='/images/flag.png' class="flag">
+      <img src='/images/retweet.png' class="retweet">`
+      if (tweet.liked == 'true') {
+        tweetEl += `<button data-liked='false' data-id=${tweet._id}><img src='/images/heart.png' class="like liked"></button>`
       } else {
-        tweetEl += `<a href='#' class="like"><img src='/images/heart.png'></a>`
+        tweetEl += `<button method="POST" action="/tweets/?_method=PUT" data-liked=true type="submit" data-id=${tweet._id}><img src='/images/heart.png' class="like"></button>`
       }
       tweetEl += `
     </span>
@@ -22,6 +22,8 @@ function createTweetElement(tweet) {
 </article>`
 return tweetEl
 }
+
+
 
 function renderTweets(tweets) {
   tweets.sort((a,b) => {
@@ -87,4 +89,34 @@ $(
         })
       }
     })
+
+    $('#tweets').on('click', 'button', function(evt){
+        evt.preventDefault()
+        console.log(`clicked ${$(this).data('id')}`)
+        let data = {
+          id: $(this).data('id'),
+          liked: $(this).data('liked')
+        }
+        console.log(data)
+        $.ajax({
+          url: '/tweets/',
+          method: 'PUT',
+          data: data,
+          success: function () {
+              $('textarea').val('')
+            loadTweets()
+          }
+        })
+
+    })
+      // let data = {
+        //   id: $(this).closest('article').data("id"),
+      //   liked: $(this).closest('article').data('liked')
+      // }
+      // if (data.liked === 0) {
+        //   data.liked++
+      // } else {
+        //   data.liked--
+      // }
+      // })
 })
