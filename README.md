@@ -5,7 +5,9 @@ Tweeter is a simple, single-page Twitter clone.
 This was forked from lighthouse-labs/tweeter, with the objective of building a simple Twitter clone using a persistent database.
 
 **********************
-Currently running from a local MongoDB.  Please ensure MongoDB is up and running on the default port prior to use.
+Currently running from heroku at https://rocky-depths-69904.herokuapp.com/
+Likes have been implemented, not not on a user logged in basis, as logins have not yet been implemented.
+CSS is SASS compiled.
 **********************
 
 ## Getting Started
@@ -17,8 +19,15 @@ Currently running from a local MongoDB.  Please ensure MongoDB is up and running
 
 ## Dependencies
 
-- Express
-- Node 5.10.x or above
+"body-parser": "^1.15.2",
+"chance": "^1.0.2",
+"dotenv": "^4.0.0",
+"express": "^4.13.4",
+"md5": "^2.1.0",
+"method-override": "^2.3.9",
+"mongodb": "^2.2.31",
+"morgan": "^1.8.2",
+"path": "^0.12.7"
 ******************************************
 ## Screenshots
 ![Screenshot of whole screen with compose box](tweeter/screenshots/tweeter.png)
